@@ -1,0 +1,1 @@
+space=${IFS%??};{printf,"Enter${space}filename:${space}"};{read,file_name};{printf,"Enter${space}Col:${space}"};{read,col_num};{cut,-d,' ',-f"${col_num}",$file_name}|{awk,'{print tolower($0)}'}|sort|{uniq,-c}|{sort,-k1,-nr}|{awk,'{print $2" "$1}'}>1f.freq

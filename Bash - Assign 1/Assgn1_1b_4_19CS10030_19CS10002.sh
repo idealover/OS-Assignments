@@ -1,0 +1,2 @@
+{mkdir,-p,1.b.files.out}&&for file in ./1.b.files/*.txt;do  
+file_name=${file##*/};{sort,-n}>"./1.b.files.out/$file_name" $file;done&&{cd,1.b.files.out}&&{cat,*.txt}|{sort,-n}|{uniq,-c}|{awk,'{print$2" "$1}'}>1.b.out.txt
